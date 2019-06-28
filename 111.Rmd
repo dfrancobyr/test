@@ -2,29 +2,73 @@
 title: '1112'
 author: "Daniel F"
 date: "28-06-2019"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+
+# Paper 1
+
+
+## Abstract
+
+```{r echo=FALSE, results='asis'}
+ library(stringi)
+stri_rand_lipsum(nparagraphs = 1)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+##Introduccion
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r echo=FALSE, results='asis'}
+library(stringi)
+stri_rand_lipsum(nparagraphs = 2)
 
-```{r cars}
-summary(cars)
+
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+## Materials and mehtods
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+### Materials
+```{r echo=FALSE, results='asis'}
+ library(stringi)
+stri_rand_lipsum(nparagraphs = 1)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Methods 
+```{r echo=FALSE, results='asis'}
+library(stringi)
+stri_rand_lipsum(nparagraphs = 1)
+```
+
+
+## Results 
+### Exp 1 
+```{r echo=FALSE, results='asis'}
+library(stringi)
+stri_rand_lipsum(nparagraphs = 2)
+```
+
+### Exp 2
+```{r echo=FALSE, results='asis'}
+library(stringi)
+stri_rand_lipsum(nparagraphs = 1)
+```
+
+## Discussion
+```{r echo=FALSE, results='asis'}
+library(stringi)
+stri_rand_lipsum(nparagraphs = 3)
+```
+
+# Bibliography 
+```{r echo=FALSE, results='asis'}
+library(stringi)
+stri_rand_lipsum(nparagraphs = 3)
+```
+
+
