@@ -6,6 +6,13 @@ output:
   pdf_document: default
   html_document: default
 ---
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(stringi)
+require(correlation)
+require(report)
+if (!require("haven")) install.packages("haven"); library("haven")
+library(tidyverse)
+```
 
 
 
@@ -21,6 +28,9 @@ stri_rand_lipsum(nparagraphs = 1)
 
 
 ##Introduccion
+
+
+jkasdfhjkhdf **jkshdfjkhsdf**df  
 
 ```{r echo=FALSE, results='asis'}
 library(stringi)
@@ -47,13 +57,46 @@ stri_rand_lipsum(nparagraphs = 1)
 
 
 ## Results 
-### Exp 1 
-```{r echo=FALSE, results='asis'}
-library(stringi)
+
+### Exp 1
+
+```{r echo=FALSE}
+
 stri_rand_lipsum(nparagraphs = 2)
+
 ```
 
-### Exp 2
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+# remotes::install_github("easystats/correlation")
+# remotes::install_github("easystats/report")
+
+name_of_file = here::here("dyr/Cancer screening risk literacy R1.sav")
+DF=haven::read_sav(name_of_file)
+View(DF)
+  
+corr_test = cor.test(iris$Sepal.Width, iris$Sepal.Length, method = "spearman")
+
+
+ table= DF %>% 
+   select(screenbeliefs, intern, resident, gender, sciliteracy, benefits, harms, SDM) %>% 
+    correlation() %>% 
+    report() %>% 
+    to_table()
+  
+ 
+  table <- table[rowSums(is.na(table)) != ncol(table),]
+  
+  knitr::kable(table)
+  
+```
+
+
+### Exp 2  
+
+
 ```{r echo=FALSE, results='asis'}
 library(stringi)
 stri_rand_lipsum(nparagraphs = 1)
@@ -70,5 +113,8 @@ stri_rand_lipsum(nparagraphs = 3)
 library(stringi)
 stri_rand_lipsum(nparagraphs = 3)
 ```
+
+
+
 
 
